@@ -2,31 +2,23 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>SGO Perfumería — TikTok Publishing</title>
+<title>SGO Perfumería — TikTok Publishing Review</title>
 <style>
-body{font-family:Arial,sans-serif;background:#faf7f5;color:#231f20;margin:0}.wrap{max-width:760px;margin:48px auto;padding:24px}.card{background:white;border:1px solid #eadfda;border-radius:16px;padding:28px;box-shadow:0 8px 30px #0000000d}h1{margin:0 0 8px}p{line-height:1.5}.badge{display:inline-block;background:#f4ebe7;padding:7px 11px;border-radius:999px;margin:12px 0}.row{margin:20px 0}label{display:block;font-weight:700;margin-bottom:8px}select,input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #ccc;border-radius:8px}.btn{display:inline-block;background:#111;color:#fff;border:0;border-radius:8px;padding:13px 18px;font-weight:700;text-decoration:none;cursor:pointer}.muted{color:#666;font-size:14px}.hidden{display:none}
+body{font-family:Arial,sans-serif;background:#faf7f5;color:#231f20;margin:0}.wrap{max-width:760px;margin:48px auto;padding:24px}.card{background:#fff;border:1px solid #eadfda;border-radius:16px;padding:28px;box-shadow:0 8px 30px #0000000d}h1{margin:0 0 8px}p{line-height:1.5}.badge{display:inline-block;background:#f4ebe7;padding:7px 11px;border-radius:999px;margin:12px 0}.row{margin:20px 0}label{display:block;font-weight:700;margin-bottom:8px}select,input{width:100%;box-sizing:border-box;padding:12px;border:1px solid #ccc;border-radius:8px}.btn{background:#111;color:#fff;border:0;border-radius:8px;padding:13px 18px;font-weight:700;cursor:pointer}.muted{color:#666;font-size:14px}.hidden{display:none}
 </style>
 </head>
 <body><div class="wrap"><div class="card">
-<h1>SGO Perfumería</h1><p>TikTok content publishing demo</p>
-<div id="login">
-<p>This interface demonstrates how SGO Perfumería authorizes its TikTok account before publishing fragrance content.</p>
-<span class="badge">Sandbox integration</span><br><br>
-<button class="btn" id="loginBtn">Continue with TikTok</button>
-</div>
-<div id="publish" class="hidden">
-<p><strong>Authorized TikTok account:</strong> <span id="account">SGO Perfumería (@sgopergumeria)</span></p>
+<h1>SGO Perfumería</h1><p>TikTok Content Posting API — Sandbox review interface</p>
+<span class="badge">Sandbox integration</span>
+<p>This page shows the publishing review step used after the SGO Perfumería TikTok account has been authorized through TikTok OAuth.</p>
+<div class="row"><label>Authorized account</label><input value="SGO Perfumería (@sgopergumeria)" readonly></div>
 <div class="row"><label>Content</label><input value="SGO Perfumería — Fragrance recommendation video" readonly></div>
 <div class="row"><label>Publishing workflow</label><select id="flow"><option>Direct Post</option><option>Upload as Draft</option></select></div>
 <div class="row"><label>Privacy</label><select><option>Only me (Sandbox test)</option></select></div>
-<p class="muted">The authorized user reviews the content and posting settings before initiating the TikTok publishing flow.</p>
-<button class="btn" id="continueBtn">Continue to TikTok publishing</button>
+<p class="muted">For the review recording, TikTok OAuth authorization and the API request are demonstrated from the actual Sandbox integration. This page does not simulate OAuth or claim that a post has been created.</p>
+<button class="btn" id="reviewBtn">Review publishing action</button>
 <p id="note" class="muted"></p>
-</div>
 </div></div>
 <script>
-const p=new URLSearchParams(location.search);
-if(p.get('authorized')==='1'){login.classList.add('hidden');publish.classList.remove('hidden')}
-loginBtn.onclick=()=>{location.href='tiktok-callback.html?demo=1'};
-continueBtn.onclick=()=>{note.textContent=flow.value==='Direct Post'?'Direct Post selected — video.publish is used for this workflow.':'Upload as Draft selected — video.upload is used for this workflow.'};
+reviewBtn.onclick=()=>{note.textContent=flow.value==='Direct Post'?'Direct Post selected. The live Sandbox integration uses video.publish for this action.':'Upload as Draft selected. The live Sandbox integration uses video.upload for this action.'};
 </script></body></html>
